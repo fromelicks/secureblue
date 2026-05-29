@@ -35,6 +35,8 @@ modules:
     scripts:
       - install-netbird.sh
 
+  - type: gschema-overrides
+
   - type: gnome-extensions
     install:
       - 6099 # PaperWM
