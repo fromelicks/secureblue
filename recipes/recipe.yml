@@ -18,6 +18,10 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: dnf
+    repos:
+    files:
+      - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
+      - netbird.repo
     install:
       packages:
         - micro
