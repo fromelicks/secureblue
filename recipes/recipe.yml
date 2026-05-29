@@ -18,6 +18,10 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: dnf
+    repos:
+      files:
+        - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
+        - netbird.repo
     install:
       packages:
         - micro
@@ -26,6 +30,9 @@ modules:
         - keepassxc
         # Fedora package installs to system extension path; EGO build is hard-coded to user paths
         - gnome-shell-extension-gsconnect
+        - repo: terra
+          packages:
+            - zed
     # remove: # Example removal
     #   packages:
     #     - firefox
@@ -39,6 +46,9 @@ modules:
     system:
       enabled:
         - netbird.service
+    user:
+      enabled:
+        - syncthing.service
 
   - type: gschema-overrides
 
