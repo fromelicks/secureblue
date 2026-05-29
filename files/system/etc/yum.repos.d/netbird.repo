@@ -1,5 +1,5 @@
-[NetBird]
-name=NetBird
+[netbird]
+name=netbird
 baseurl=https://pkgs.netbird.io/yum/
 enabled=1
 gpgcheck=1
