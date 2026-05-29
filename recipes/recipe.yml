@@ -19,7 +19,8 @@ modules:
 
   - type: dnf
     repos:
-      - https://pkgs.netbird.io/yum/netbird.repo
+      files:
+        - https://pkgs.netbird.io/yum/netbird.repo
     install:
       packages:
         - micro
@@ -37,7 +38,7 @@ modules:
 
   - type: gnome-extensions
     install:
-      - id: 6099 # PaperWM — paperwm@paperwm.github.com
+      - 6099 # PaperWM — paperwm@paperwm.github.com
 
   - type: systemd
     system:
