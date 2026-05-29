@@ -46,6 +46,9 @@ modules:
     system:
       enabled:
         - netbird.service
+    user:
+      enabled:
+        - syncthing.service
 
   - type: gschema-overrides
 
