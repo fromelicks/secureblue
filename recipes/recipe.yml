@@ -21,7 +21,6 @@ modules:
     install:
       packages:
         - micro
-        - netbird
         - rclone
         - syncthing
         - keepassxc
@@ -32,6 +31,10 @@ modules:
       packages:
         - firefox
         - firefox-langpacks
+
+  - type: script
+    scripts:
+      - install-netbird.sh
 
   - type: gnome-extensions
     install:
