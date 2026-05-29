@@ -18,9 +18,6 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: dnf
-    repos:
-      files:
-        - https://pkgs.netbird.io/yum/netbird.repo
     install:
       packages:
         - micro
