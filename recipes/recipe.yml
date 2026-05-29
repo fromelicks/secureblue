@@ -30,6 +30,9 @@ modules:
         - keepassxc
         # Fedora package installs to system extension path; EGO build is hard-coded to user paths
         - gnome-shell-extension-gsconnect
+        - repo: terra
+          packages:
+            - zed
     # remove: # Example removal
     #   packages:
     #     - firefox
