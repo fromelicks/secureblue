@@ -18,15 +18,32 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: dnf
+    repos:
+      - https://pkgs.netbird.io/yum/netbird.repo
     install:
       packages:
         - micro
+        - netbird
+        - rclone
+        - syncthing
+        - keepassxc
+        # Fedora package installs to system extension path; EGO build is hard-coded to user paths
+        - gnome-shell-extension-gsconnect
+        - distrobox
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - firefox-langpacks
+
+  - type: gnome-extensions
+    install:
+      - id: 6099 # PaperWM — paperwm@paperwm.github.com
+
+  - type: systemd
+    system:
+      enabled:
+        - netbird.service
+
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
