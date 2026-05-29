@@ -70,6 +70,7 @@ These gate multiple features. Verified against secureblue source.
 7. **Xwayland is off.** Toggle on for Steam/gaming (`ujust set-xwayland on`, needs relogin).
    Electron apps (VSCode) need `--ozone-platform-hint=auto` for native Wayland.
 8. **hardened_malloc is globally preloaded.** Some apps (Steam) require it disabled per-app.
+9. Trivalent defaults WebRTC to disable_non_proxied_udp — breaks browser-based real-time voice/video (Discord, Meet, Jitsi); relax per-need or use a dedicated client.
 
 ## Feature implementation plan
 
