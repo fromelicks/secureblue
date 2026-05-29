@@ -34,10 +34,7 @@ modules:
   - type: script
     scripts:
       - install-netbird.sh
-
-  - type: gnome-extensions
-    install:
-      - 6099 # PaperWM — paperwm@paperwm.github.com
+      - install-paperwm.sh
 
   - type: systemd
     system:
