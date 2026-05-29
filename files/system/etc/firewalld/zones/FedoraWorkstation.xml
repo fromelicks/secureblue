@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone target="DROP">
+  <short>Fedora Workstation</short>
+  <description>Hardened workstation zone. All inbound dropped except declared services.</description>
+  <!-- Syncthing: relay (22000/tcp+udp) + local discovery (21027/udp) -->
+  <port protocol="tcp" port="22000"/>
+  <port protocol="udp" port="22000"/>
+  <port protocol="udp" port="21027"/>
+  <!-- GSConnect / KDEConnect -->
+  <port protocol="tcp" port="1714-1764"/>
+  <port protocol="udp" port="1714-1764"/>
+</zone>

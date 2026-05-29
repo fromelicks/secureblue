@@ -21,12 +21,29 @@ modules:
     install:
       packages:
         - micro
+        - rclone
+        - syncthing
+        - keepassxc
+        # Fedora package installs to system extension path; EGO build is hard-coded to user paths
+        - gnome-shell-extension-gsconnect
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - firefox-langpacks
+
+  - type: script
+    scripts:
+      - install-netbird.sh
+
+  - type: gnome-extensions
+    install:
+      - 6099 # PaperWM
+
+  - type: systemd
+    system:
+      enabled:
+        - netbird.service
+
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
