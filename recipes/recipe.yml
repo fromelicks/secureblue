@@ -35,16 +35,16 @@ modules:
     scripts:
       - install-netbird.sh
 
+  - type: systemd
+    system:
+      enabled:
+        - netbird.service
+
   - type: gschema-overrides
 
   - type: gnome-extensions
     install:
       - 6099 # PaperWM
-
-  - type: systemd
-    system:
-      enabled:
-        - netbird.service
 
   - type: default-flatpaks
     configurations:
@@ -56,5 +56,8 @@ modules:
           - org.gnome.Calendar
           - org.gnome.Extensions
       - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: justfiles
+    validate: true
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
