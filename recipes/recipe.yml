@@ -26,23 +26,25 @@ modules:
         - keepassxc
         # Fedora package installs to system extension path; EGO build is hard-coded to user paths
         - gnome-shell-extension-gsconnect
-    remove:
-      packages:
-        - firefox
-        - firefox-langpacks
+    # remove: # Example removal
+    #   packages:
+    #     - firefox
+    #     - firefox-langpacks
 
   - type: script
     scripts:
       - install-netbird.sh
 
-  - type: gnome-extensions
-    install:
-      - 6099 # PaperWM
-
   - type: systemd
     system:
       enabled:
         - netbird.service
+
+  - type: gschema-overrides
+
+  - type: gnome-extensions
+    install:
+      - 6099 # PaperWM
 
   - type: default-flatpaks
     configurations:
@@ -51,6 +53,11 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - org.gnome.Loupe
+          - org.gnome.Calendar
+          - org.gnome.Extensions
       - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: justfiles
+    validate: true
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
