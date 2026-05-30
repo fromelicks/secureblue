@@ -26,6 +26,7 @@ modules:
     install:
       packages:
         - micro
+        - git
         - rclone
         - syncthing
         - keepassxc
@@ -34,6 +35,8 @@ modules:
         - gh
         - repo: terra
           packages:
+            - terra-release
+            - terra-gpg-keys
             - zed
     # remove: # Example removal
     #   packages:
