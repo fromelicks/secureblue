@@ -61,13 +61,13 @@ modules:
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
+        scope: user
         # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
+        install:
           - org.gnome.Loupe
           - org.gnome.Calendar
           - org.gnome.Extensions
-      - scope: user # Also add Flathub user repo, but no user packages
+          - org.gnome.Weather
 
   - type: justfiles
     validate: true
