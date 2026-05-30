@@ -20,6 +20,7 @@ modules:
   - type: dnf
     repos:
       files:
+        - https://cli.github.com/packages/rpm/gh-cli.repo
         - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
         - netbird.repo
     install:
@@ -30,6 +31,7 @@ modules:
         - keepassxc
         # Fedora package installs to system extension path; EGO build is hard-coded to user paths
         - gnome-shell-extension-gsconnect
+        - gh
         - repo: terra
           packages:
             - zed
